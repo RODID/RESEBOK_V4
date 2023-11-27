@@ -25,8 +25,35 @@ namespace RESEBOK_V4
             InitializeComponent();
         }
 
-        private void Login_Click(object sender, RoutedEventArgs e)
+        public void Login_Click(object sender, RoutedEventArgs e)
         {
+            string enterdUsername = Username.Text;
+            bool LoginSucces = false;
+            int loginCount = 3;
+
+            while (LoginSucces) 
+            {
+               if (LoginSucces) 
+                {
+                    MessageBox.Show("Invalid username");
+                    loginCount--;
+                }
+                if (loginCount < 0)
+                {
+                    MessageBox.Show("are u under stress? this been thre times!");
+                    loginCount = 3;
+                }
+            }
+            if (enterdUsername == "ChupaCabra")
+            {
+                 ListWindow listWindow = new ListWindow();
+                 listWindow.Show();
+
+                 this.Hide();
+            }
+            
+
+            
             
 
         }

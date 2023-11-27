@@ -8,7 +8,7 @@
         Title="MainWindow" Height="350" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
+            <ColumnDefinition />
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
@@ -19,8 +19,8 @@
         </Grid.RowDefinitions>
         <TextBlock
             Name="SetupText"
-            FontSize="20"
-            Text="Hello and welcome back!"
+            FontSize="15"
+            Text="Hello and welcome!"
             VerticalAlignment="Bottom"
             HorizontalAlignment="Center"
             Grid.Column="1"
@@ -44,7 +44,9 @@
             Grid.Row="1"
             Margin="25"
             Height="25"
-            Width="200"
+            Width="150"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
             />
         <TextBlock
             Name="SetupTextHelp"
