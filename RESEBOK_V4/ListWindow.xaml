@@ -32,10 +32,44 @@
         <Button
             Content="Add Destination"
             Click="AddDestination_Click"
-            Margin="10"
+            Margin="35"
             Grid.Row="1"
             Height="25"
             Width="125"
+            />
+        <TextBox
+            Name="AddCity"
+            Height="25"
+            Width="125"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Bottom"
+            Margin="35"
+            />
+        <TextBox
+            Name="AddYear"
+            Height="25"
+            Width="125"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Bottom"
+            Margin="35"
+            />
+        <TextBox
+            Name="AddMonth"
+            Height="25"
+            Width="125"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Grid.Row="1"
+            Margin="35"
+            />
+        <TextBox
+            Name="AddDay"
+            Height="25"
+            Width="125"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            Grid.Row="1"
+            Margin="35"
             />
 
     </Grid>

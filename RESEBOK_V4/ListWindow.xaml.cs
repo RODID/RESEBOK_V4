@@ -20,7 +20,7 @@ namespace RESEBOK_V4
     public partial class ListWindow : Window
     {
 
-        public List<Destinations> listOfDestinations = new List<Destinations>();
+        public List<Destinations> listOfDestinations;
         public ListWindow()
         {
             InitializeComponent();
@@ -43,15 +43,15 @@ namespace RESEBOK_V4
         public string notes { get; set; }
         public void InitializeDestinations()
         {
-            ListDestination.Items.Add("Spain" + 1975 + 07 + 17);           
-            ListDestination.Items.Add("Stockholm" + 1981 + 12 + 29);
-            ListDestination.Items.Add("" + 1975 + 07 + 17);
-
+            ListDestination.Items.Add("Spain" + " - " + 1975 + " - " + 07 + " - " + 17);           
+            ListDestination.Items.Add("Stockholm" + " - " + 1981 + " - " + 12 + " - " + 29);
+            ListDestination.Items.Add("Bali" + " - " + 1975 + " - " + 07 + " - " + 17);
 
         }
 
         private void AddDestination_Click(object sender, RoutedEventArgs e)
         {
+            new List<Destinations>();
 
         }
     }
