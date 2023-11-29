@@ -27,31 +27,45 @@ namespace RESEBOK_V4
             InitializeDestinations();
         }
 
-        public ListWindow(string cityName, int year, int month, int day)
-        {
-            string CityName = cityName;
-            int Year = year;
-            int Month = month;
-            int Day = day;
-            string Notes = notes;
-        }
-
-        public string cityName { get; set; }
-        public int year { get; set; }   
-        public int month { get; set; }
-        public int day { get; set; }
-        public string notes { get; set; }
         public void InitializeDestinations()
         {
-            ListDestination.Items.Add("Spain" + " - " + 1975 + " - " + 07 + " - " + 17);           
-            ListDestination.Items.Add("Stockholm" + " - " + 1981 + " - " + 12 + " - " + 29);
-            ListDestination.Items.Add("Bali" + " - " + 1975 + " - " + 07 + " - " + 17);
+            listOfDestinations = new List<Destinations>();
+
+            //förinställda destinationer haha
+            ListDestination.Items.Add(new Destination { CityName = "Spain", Year = 1975, Month = 07, Day = 17 });
+            ListDestination.Items.Add(new Destination{ CityName = "Stockholm", Year = 1981, Month = 12, Day = 29});
+            ListDestination.Items.Add(new Destination { CityName = "Bali", Year = 1972, Month = 04, Day = 13});
+
+            //Binding the list to the ListBox
+            ListDestination.ItemsSource = listOfDestinations;
 
         }
 
         private void AddDestination_Click(object sender, RoutedEventArgs e)
         {
-            new List<Destinations>();
+            //Värdet på TextBoxes
+            string city = AddCity.Text;
+            int year = int.Parse(AddYear.Text);
+            int month = int.Parse(AddMonth.Text);
+            int day = int.Parse(AddDay.Text);
+
+            //skapar en ny destination och lägger till den i listan
+            Destination newDestination = new Destination { CityName = city, Year = year, Month = month, Day = day };
+            listOfDestinations.Add(newDestination);
+
+            // rensar efter man har använt funktionen
+            AddCity.Clear();
+            AddYear.Clear();
+            AddMonth.Clear();
+            AddDay.Clear();
+
+
+
+
+        }
+
+        private void AddCity_TouchEnter(object sender, TouchEventArgs e)
+        {
 
         }
     }

@@ -31,11 +31,11 @@
             />
         <Button
             Content="Add Destination"
-            Click="AddDestination_Click"
             Margin="35"
             Grid.Row="1"
             Height="25"
             Width="125"
+            Click=""
             />
         <TextBox
             Name="AddCity"
@@ -61,6 +61,7 @@
             VerticalAlignment="Top"
             Grid.Row="1"
             Margin="35"
+            
             />
         <TextBox
             Name="AddDay"
@@ -70,6 +71,50 @@
             VerticalAlignment="Top"
             Grid.Row="1"
             Margin="35"
+            />
+        <Label
+            Name="AddDayText"
+            Content="Sett Day"
+            FontSize="10"
+            Height="25"
+            Width="100"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            Grid.Row="1"
+            Margin="0,10,58,0"
+            />
+        <Label
+            Name="AddMonthText"
+            Content="Sett Month"
+            FontSize="10"
+            Height="25"
+            Width="100"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Grid.Row="1"
+            Margin="35,10,0,0"
+            />
+        <Label
+            Name="AddYearText"
+            Content="Sett Year"
+            FontSize="10"
+            Height="25"
+            Width="100"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Bottom"
+            Grid.Row="0"
+            Margin="0,0,60,60"
+            />
+        <Label
+            Name="AddCityText"
+            Content="Sett City"
+            FontSize="10"
+            Height="25"
+            Width="100"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Bottom"
+            Grid.Row="0"
+            Margin="35,0,0,60"
             />
 
     </Grid>
