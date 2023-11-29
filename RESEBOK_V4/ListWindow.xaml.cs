@@ -33,6 +33,7 @@ namespace RESEBOK_V4
 
             ListDestination.ItemsSource = listOfDestinations;
 
+            ListDestination.Background = Brushes.White;
         }
 
         private void AddDestination_Click(object sender, RoutedEventArgs e)
