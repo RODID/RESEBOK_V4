@@ -20,7 +20,7 @@ namespace RESEBOK_V4
     public partial class ListWindow : Window
     {
 
-        public List<Destinations> listOfDestinations;
+        public List<Destination> listOfDestinations;
         public ListWindow()
         {
             InitializeComponent();
@@ -29,14 +29,8 @@ namespace RESEBOK_V4
 
         public void InitializeDestinations()
         {
-            listOfDestinations = new List<Destinations>();
+            listOfDestinations = new List<Destination>();
 
-            //förinställda destinationer haha
-            ListDestination.Items.Add(new Destination { CityName = "Spain", Year = 1975, Month = 07, Day = 17 });
-            ListDestination.Items.Add(new Destination{ CityName = "Stockholm", Year = 1981, Month = 12, Day = 29});
-            ListDestination.Items.Add(new Destination { CityName = "Bali", Year = 1972, Month = 04, Day = 13});
-
-            //Binding the list to the ListBox
             ListDestination.ItemsSource = listOfDestinations;
 
         }
