@@ -42,21 +42,30 @@ namespace RESEBOK_V4
 
         private void AddDestination_Click(object sender, RoutedEventArgs e)
         {
-            //Värdet på TextBoxes
-            string city = AddCity.Text;
-            int year = int.Parse(AddYear.Text);
-            int month = int.Parse(AddMonth.Text);
-            int day = int.Parse(AddDay.Text);
+            try 
+            { 
+            
+                //Värdet på TextBoxes
+                string city = AddCity.Text;
+                int year = int.Parse(AddYear.Text);
+                int month = int.Parse(AddMonth.Text);
+                int day = int.Parse(AddDay.Text);
 
-            //skapar en ny destination och lägger till den i listan
-            Destination newDestination = new Destination { CityName = city, Year = year, Month = month, Day = day };
-            listOfDestinations.Add(newDestination);
+                //skapar en ny destination och lägger till den i listan
+                Destination newDestination = new Destination { CityName = city, Year = year, Month = month, Day = day };
+                listOfDestinations.Add(newDestination);
 
-            // rensar efter man har använt funktionen
-            AddCity.Clear();
-            AddYear.Clear();
-            AddMonth.Clear();
-            AddDay.Clear();
+
+                // rensar efter man har använt funktionen
+                AddCity.Clear();
+                AddYear.Clear();
+                AddMonth.Clear();
+                AddDay.Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An Error Occurred: {"set correct information"}", "error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
 
 
 
