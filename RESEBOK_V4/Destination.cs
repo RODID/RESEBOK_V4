@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RESEBOK_V4
 {
-    internal class Destination
+    public class Destination
     {
         public string CityName { get; set; }
         public int Year { get; set; }

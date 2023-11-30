@@ -34,6 +34,10 @@ namespace RESEBOK_V4
             ListDestination.ItemsSource = listOfDestinations;
 
             ListDestination.Background = Brushes.White;
+            new Destination { CityName = "Spain", Year = 1999, Month = 12, Day = 12 };
+            new Destination { CityName = "Schewiz", Year = 1996, Month = 02, Day = 15 };
+            new Destination { CityName = "Serbia", Year = 1976, Month = 05, Day = 17 };
+
         }
 
         private void AddDestination_Click(object sender, RoutedEventArgs e)
