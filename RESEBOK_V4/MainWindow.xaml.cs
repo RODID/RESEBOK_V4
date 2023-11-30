@@ -20,6 +20,9 @@ namespace RESEBOK_V4
     /// </summary>
     public partial class MainWindow : Window
     {
+        int loginCount = 3;
+
+
         public MainWindow()
         {
             InitializeComponent();
@@ -28,28 +31,27 @@ namespace RESEBOK_V4
         public void Login_Click(object sender, RoutedEventArgs e)
         {
             string enterdUsername = Username.Text;
-            bool LoginSucces = false;
-            int loginCount = 3;
 
-            while (LoginSucces) 
+            if (enteredUsername == "ChupaCabra")
             {
-               if (LoginSucces) 
-                {
-                    MessageBox.Show("Invalid username");
-                    loginCount--;
-                }
-                if (loginCount < 0)
-                {
-                    MessageBox.Show("are u under stress? this been thre times!");
-                    loginCount = 3;
-                }
+                ListWindow listWindow = new ListWindow();
+                listWindow.Show();
+                this.Hide();
             }
-            if (enterdUsername == "ChupaCabra")
+            else
             {
-                 ListWindow listWindow = new ListWindow();
-                 listWindow.Show();
+                loginCount--;
 
-                 this.Hide();
+                if(loginCount > 0)
+                {
+                    MessageBox.Show($"Invalid username. {loginCount} attampts remaining.", "Login Failed", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
+                else
+                {
+                    MessageBox.Show("You have exceeded the maximum number of login attempts. Please come back later.", "Login Failed", MessageBoxButton.OK, MessageBoxImage.Error);
+
+                    Close();
+                }
             }
             
 
