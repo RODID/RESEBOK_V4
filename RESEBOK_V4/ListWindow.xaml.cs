@@ -14,15 +14,13 @@ using System.Windows.Shapes;
 using System.IO;
 using System.Globalization;
 using CsvHelper;
+using RESEBOK_V4;
 
 namespace RESEBOK_V4
 {
-    /// <summary>
-    /// Interaction logic for ListWindow.xaml
-    /// </summary>
     public partial class ListWindow : Window
     {
-
+        private readonly CsvFileManager csvFileManager = new CsvFileManager("Destinations.csv");
         public List<Destination> listOfDestinations;
 
         
@@ -63,10 +61,12 @@ namespace RESEBOK_V4
                 AddYear.Clear();
                 AddMonth.Clear();
                 AddDay.Clear();
+
+                csvFileManager.SaveDestinations(listOfDestinations);
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An Error Occurred: {"set correct information"}", "error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show($"An Error Occurred: {"sett correct information"}", "error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
 
