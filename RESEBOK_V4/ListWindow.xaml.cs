@@ -11,6 +11,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.IO;
+using System.Globalization;
+using CsvHelper;
 
 namespace RESEBOK_V4
 {
@@ -21,6 +24,8 @@ namespace RESEBOK_V4
     {
 
         public List<Destination> listOfDestinations;
+
+        
         public ListWindow()
         {
             InitializeComponent();
@@ -33,10 +38,7 @@ namespace RESEBOK_V4
 
             ListDestination.ItemsSource = listOfDestinations;
 
-            ListDestination.Background = Brushes.White;
-            new Destination { CityName = "Spain", Year = 1999, Month = 12, Day = 12 };
-            new Destination { CityName = "Schewiz", Year = 1996, Month = 02, Day = 15 };
-            new Destination { CityName = "Serbia", Year = 1976, Month = 05, Day = 17 };
+            
 
         }
 

@@ -30,7 +30,7 @@ namespace RESEBOK_V4
 
         public void Login_Click(object sender, RoutedEventArgs e)
         {
-            string enterdUsername = Username.Text;
+            string enteredUsername = Username.Text;
 
             if (enteredUsername == "ChupaCabra")
             {
