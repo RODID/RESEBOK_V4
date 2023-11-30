@@ -22,7 +22,6 @@ namespace RESEBOK_V4
     {
         private readonly CsvFileManager csvFileManager = new CsvFileManager("Destinations.csv");
         public List<Destination> listOfDestinations;
-
         
         public ListWindow()
         {
@@ -36,15 +35,12 @@ namespace RESEBOK_V4
 
             ListDestination.ItemsSource = listOfDestinations;
 
-            
-
         }
 
         private void AddDestination_Click(object sender, RoutedEventArgs e)
         {
             try 
             { 
-            
                 //Värdet på TextBoxes
                 string city = AddCity.Text;
                 int year = int.Parse(AddYear.Text);
@@ -54,7 +50,6 @@ namespace RESEBOK_V4
                 //skapar en ny destination och lägger till den i listan
                 Destination newDestination = new Destination { CityName = city, Year = year, Month = month, Day = day };
                 listOfDestinations.Add(newDestination);
-
 
                 // rensar efter man har använt funktionen
                 AddCity.Clear();
@@ -68,10 +63,6 @@ namespace RESEBOK_V4
             {
                 MessageBox.Show($"An Error Occurred: {"sett correct information"}", "error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-
-
-
-
         }
 
         private void AddCity_TouchEnter(object sender, TouchEventArgs e)
