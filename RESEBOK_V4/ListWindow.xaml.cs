@@ -15,6 +15,7 @@ using System.IO;
 using System.Globalization;
 using CsvHelper;
 using RESEBOK_V4;
+using System.ComponentModel;
 
 namespace RESEBOK_V4
 {
@@ -51,6 +52,9 @@ namespace RESEBOK_V4
                 Destination newDestination = new Destination { CityName = city, Year = year, Month = month, Day = day };
                 listOfDestinations.Add(newDestination);
 
+                ListDestination.ItemsSource = null;
+                ListDestination.ItemsSource = listOfDestinations;
+
                 // rensar efter man har använt funktionen
                 AddCity.Clear();
                 AddYear.Clear();
@@ -65,9 +69,6 @@ namespace RESEBOK_V4
             }
         }
 
-        private void AddCity_TouchEnter(object sender, TouchEventArgs e)
-        {
-
-        }
+       
     }
 }

@@ -21,7 +21,7 @@ namespace RESEBOK_V4
         public void SaveDestinations(List<Destination> destinations)
         {
             string text = "This is a random text";
-
+            
             //skapar en ny objekt för att skriva.
             StreamWriter writer = new StreamWriter("DestinationCSV");
 
