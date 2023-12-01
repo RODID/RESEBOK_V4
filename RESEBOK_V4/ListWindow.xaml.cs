@@ -25,12 +25,6 @@ namespace RESEBOK_V4
         public List<Destination> listOfDestinations;
 
         private readonly MainWindow mainWindow;
-        
-        public ListWindow()
-        {
-            InitializeComponent();
-            InitializeDestinations();
-        }
         public ListWindow(MainWindow mainWindow)
         {
             this.mainWindow = mainWindow;
@@ -65,6 +59,8 @@ namespace RESEBOK_V4
                 AddYear.Clear();
                 AddMonth.Clear();
                 AddDay.Clear();
+
+                csvFileManager.SaveDestinations(listOfDestinations);
 
             }
             catch (Exception ex)
