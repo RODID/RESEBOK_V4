@@ -37,6 +37,14 @@ namespace RESEBOK_V4
                 csv.WriteRecords(destinations);
             }
         }
+        public List<Destination> LoadDestinations()
+        {
+            using (StreamReader reader = new StreamReader(filePath))
+            using (CsvReader csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+            {
+                return csv.GetRecords<Destination>().ToList();
+            }
+        }
 
     }
 }

@@ -25,15 +25,16 @@ namespace RESEBOK_V4
         public List<Destination> listOfDestinations;
 
         private readonly MainWindow mainWindow;
+        
         public ListWindow(MainWindow mainWindow)
         {
             this.mainWindow = mainWindow;
             InitializeComponent();
             InitializeDestinations();
         }
-        private void InitializeDestinations()
+        public void InitializeDestinations()
         {
-            listOfDestinations = new List<Destination>();
+            listOfDestinations = csvFileManager.LoadDestinations();
             ListDestination.ItemsSource = listOfDestinations;
         }
 
