@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RESEBOK_V4"
         mc:Ignorable="d"
-        Title="ListWindow" Height="450" Width="800">
+        Title="ListWindow" Height="450" Width="800"
+        Closing="ListWindow_Closing">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -28,6 +29,16 @@
             Margin="10"
             Grid.Column="1"
             Grid.RowSpan="2"
+            ItemsSource="{Binding ListOfDestinations}"
+        />
+        <Button
+            Content="Go Back"
+            Margin="35"
+            Grid.Row="1"
+            Height="25"
+            Width="125"
+            VerticalAlignment="Bottom"
+            Click="GoBack_Click"
             />
         <Button
             Content="Add Destination"

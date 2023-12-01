@@ -9,6 +9,15 @@ using System.Threading.Channels;
 
 namespace RESEBOK_V4
 {
+
+    /*    Unused filePath Field: The filePath 
+        field in CsvFileManager is declared but not used. 
+        If you plan to use it in the future, keep it. Otherwise, 
+        you can remove it.
+
+        Hardcoded File Name: You have hardcoded the file name
+        "DestinationCSV" in StreamWriter. If you want to use the 
+        filePath variable, consider using it in the StreamWriter constructor.*/
     public class CsvFileManager
     {
         private string filePath;

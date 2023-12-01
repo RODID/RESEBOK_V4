@@ -23,42 +23,48 @@ namespace RESEBOK_V4
     {
         int loginCount = 3;
 
+        private readonly ListWindow listWindow;
+
 
         public MainWindow()
         {
             InitializeComponent();
+            this.listWindow = listWindow;
+
         }
 
-        public void Login_Click(object sender, RoutedEventArgs e)
+        public async void Login_Click(object sender, RoutedEventArgs e)
         {
             string enteredUsername = Username.Text;
 
             if (enteredUsername == "ChupaCabra")
             {
-                ListWindow listWindow = new ListWindow();
+                ListWindow listWindow = new ListWindow(this);
                 listWindow.Show();
+                Username.Clear();
                 this.Hide();
             }
             else
             {
                 loginCount--;
 
-                if(loginCount > 0)
+                if (loginCount == 1)
                 {
-                    MessageBox.Show($"Invalid username. {loginCount} attampts remaining.", "Login Failed", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    SetupText.Text = $"Are you okay?";
                 }
-                else
+                else if (loginCount == 0)
                 {
-                    MessageBox.Show("You have exceeded the maximum number of login attempts. Please come back later.", "Login Failed", MessageBoxButton.OK, MessageBoxImage.Error);
-
+                    SetupText.Text = $"Emergency Shut down";
+                    await Task.Delay(3000);
                     Close();
                 }
+                
             }
-            
-
-            
-            
-
         }
+        private void GoBack_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
     }
 }
