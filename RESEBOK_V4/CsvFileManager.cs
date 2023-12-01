@@ -31,7 +31,7 @@ namespace RESEBOK_V4
 
         public void SaveDestinations(List<Destination> destinations)
         {
-            using (StreamWriter writer = new StreamWriter(filePath))
+            using (StreamWriter writer = new StreamWriter("destinations.csv"))
             using (CsvWriter csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
             {
                 csv.WriteRecords(destinations);
@@ -39,10 +39,17 @@ namespace RESEBOK_V4
         }
         public List<Destination> LoadDestinations()
         {
-            using (StreamReader reader = new StreamReader(filePath))
-            using (CsvReader csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+            if(File.Exists(filePath))
             {
-                return csv.GetRecords<Destination>().ToList();
+                using (StreamReader reader = new StreamReader("destinations.csv"))
+                using (CsvReader csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+                {
+                    return csv.GetRecords<Destination>().ToList();
+                }
+            }
+            else
+            {
+                return new List<Destination>();
             }
         }
 
